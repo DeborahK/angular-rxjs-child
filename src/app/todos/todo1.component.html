@@ -1,0 +1,17 @@
+<h1>Child 1: Passing Observable</h1>
+<table *ngIf="todos$ | async as todos">
+	<thead>
+		<tr>
+			<th>User Id</th>
+			<th>Title</th>
+			<th>Completed?</th>
+		</tr>
+	</thead>
+	<tbody *ngFor="let todo of todos">
+		<tr>
+			<td>{{ todo.userId }}</td>
+			<td>{{ todo.title }}</td>
+			<td>{{ todo.completed }}</td>
+		</tr>
+	</tbody>
+</table>

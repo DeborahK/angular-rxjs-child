@@ -1,0 +1,12 @@
+<div *ngIf='users$ | async as users'>
+	<select (change)="onSelected($event.target.value)">
+    <option value="">--Select a user--</option>
+    <option *ngFor="let user of users"
+            [value]="user.id">{{ user.name }}</option>
+  </select>
+</div>
+
+<appTodo1 [todos$]=todos$></appTodo1>
+<div *ngIf='todos$ | async as todos'>
+	<appTodo2 [todos]=todos></appTodo2>
+</div>
